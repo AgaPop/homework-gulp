@@ -1,7 +1,7 @@
-![Homepage screenshot] (github/intro.JPG)
+![Homepage screenshot](github/intro.JPG)
 
 # Mój homepage
-Zapraszam na moją stronę: [Strona domowa Agi Pop] (https://agapop.github.io/homework-gulp.io)
+Zapraszam na moją stronę: [Strona domowa Agi Pop](https://agapop.github.io/homework-gulp/)
 
 ## Uruchomienie strony lokalnie 
 Wykonaj poniższe polecenia:
