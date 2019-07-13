@@ -1,6 +1,10 @@
-![Homepage screenshot] (github/intro.jpg)
+![Homepage screenshot] (github/intro.JPG)
 
-# wtf-gulp-starter
+# Mój homepage
+Zapraszam na moją stronę: [Strona domowa Agi Pop] (https://agapop.github.io/homework-gulp.io)
+
+## Uruchomienie strony lokalnie 
+Wykonaj poniższe polecenia:
 
 `npm install -g gulp-cli`
 
