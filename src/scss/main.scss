@@ -141,6 +141,11 @@ body {
     display: block;
     margin: 0 5px 5px 0;
     float: left;
+
+    transition: transform .3s ease-in-out;
+    &:hover {
+      transform: scale(1.03);
+    }    
   }
 
   &__link {
@@ -199,6 +204,13 @@ body {
     font-weight: bold;
     text-align: center;
     flex-grow: 1;
+
+    transition: transform .2s linear, background .2s ease-in-out;
+    &:hover {
+      transform: scale(1.2);
+      background: $coldwhite;
+      background: linear-gradient(180deg, rgb(144, 205, 255) 0%, rgb(237, 242, 245) 100%);
+    }
 
     @media (max-width: $mobile) {     
         margin: 1px;
