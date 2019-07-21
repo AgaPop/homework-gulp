@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -5,6 +6,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=latin-ext");
 html {
   line-height: 1.15;
   /* 1 */
@@ -339,6 +341,9 @@ body {
     padding: 5px;
     border-bottom: 1.5px solid grey;
     text-align: center; }
+  @media (min-width: 1150px) {
+    .main {
+      max-width: 850px; } }
 
 .footer {
   color: #385572;
@@ -438,6 +443,21 @@ body {
   .article-list__shortcat-header {
     color: #59A5D8;
     padding: 5px 0 0 10px; }
+  @media (max-width: 600px) {
+    .article-list {
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+          grid-template-areas: "article-list__header" "." "." "." "." "last-article"; }
+    .article-list__header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1; }
+    .article-list__shortcat--last {
+    -ms-grid-row: 6;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1; } }
 
 .navigation {
   width: 100%;
@@ -455,6 +475,9 @@ body {
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1; }
+    @media (max-width: 600px) {
+      .navigation__item {
+        margin: 1px; } }
   .navigation__link {
     color: #1B065E;
     text-decoration: none; }
@@ -476,6 +499,36 @@ body {
         justify-content: space-around;
     -ms-flex-line-pack: center;
         align-content: center; }
+    @media (max-width: 600px) {
+      .navigation__list {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -ms-flex-line-pack: start;
+            align-content: flex-start;
+        display: none; } }
+    @media (max-width: 600px) {
+      .navigation__list--visible {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; } }
+  @media (max-width: 600px) {
+    .navigation__switcher {
+      border: none;
+      background: none;
+      position: absolute;
+      right: 16px;
+      top: 16px; } }
+  @media (min-width: 601px) {
+    .navigation__switcher {
+      display: none; } }
+  @media (min-width: 1150px) {
+    .navigation__switcher {
+      display: none; } }
+  @media (min-width: 1150px) {
+    .navigation {
+      max-width: 850px; } }
 
 .site-header {
   position: fixed;
@@ -486,52 +539,62 @@ body {
   background: #fefefe;
   width: 100%; }
 
-@media (max-width: 600px) {
+/* MEDIA ZOSTAŁY PRZEROBIONE NA SCSS
+@media (max-width: $mobile) {
   .article-list {
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
-        grid-template-areas: "article-list__header" "." "." "." "." "last-article"; }
+    grid-template-areas:
+      "article-list__header"
+      "."
+      "."
+      "."
+      "."
+      "last-article";
+  }
+
   .navigation__list {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -ms-flex-line-pack: start;
-        align-content: flex-start;
-    display: none; }
+    flex-direction: column;
+    align-content: flex-start;
+    display: none;
+  }
+
   .navigation__list--visible {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+  }
+
   .navigation__item {
-    margin: 1px; }
+    margin: 1px;
+  }
+
   .navigation__switcher {
     border: none;
     background: none;
     position: absolute;
     right: 16px;
-    top: 16px; }
-  .article-list__header {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 1; }
-  .article-list__shortcat--last {
-    -ms-grid-row: 6;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 1; } }
+    top: 16px;
+  }
+}
 
-@media (min-width: 601px) {
+@media (min-width: $tablet) {
   .navigation__switcher {
-    display: none; } }
+    display: none;
+  }
+}
 
-@media (min-width: 1150px) {
+@media (min-width: $desktop) {
   .main {
-    max-width: 850px; }
+    max-width: 850px;
+  }
+
   .navigation {
-    max-width: 850px; }
+    max-width: 850px;
+  }
+
   .navigation__switcher {
-    display: none; } }
+    display: none;
+  }
+}
+*/
 
 /*# sourceMappingURL=main.css.map */
