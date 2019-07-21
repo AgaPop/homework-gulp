@@ -103,3 +103,112 @@ navigationSwitcher.addEventListener('click', (e)=> {
     }     
 } );
 
+
+
+
+
+
+
+/*08.06 - JS: Tablice*/
+const tablica = ['string0', 'string1', 'string2']
+const news = [
+    {title: 'wtf',
+    content: 'lorem ipsum'
+    },
+    {title: 'co ten frontend',
+    content: 'lorem lorem',
+    link: 'onet.pl'
+    }    
+]
+
+console.log(tablica[1]);
+console.log(news);
+console.log(tablica.length);
+
+const string = "Agnieszka";
+console.log(string[0]);
+console.log(string.length);
+
+tablica.push('string3');
+console.log(tablica);
+
+tablica.unshift('string początkowy');
+console.log(tablica);
+
+tablica.shift();
+console.log(tablica);
+
+tablica.pop();
+console.log(tablica);
+
+console.log(tablica.indexOf("string0"));
+
+tablica.splice(1,2);
+console.log(tablica);
+
+tablica.push('string1');
+tablica.push('string2');
+console.log(tablica.slice(1,2));
+
+// 08.07 JS: Petle
+
+// FOR
+for (let i = 0; i < 3; i++){
+    console.log(`${i} powtorzenie`);
+}
+
+const faces = ['😼', '😈', '🤨', 'test'];
+for (let i = 0; i < faces.length; i++){
+    console.log(`element ${i}: ${faces[i]}`);
+}
+
+// FOR OF
+for (let face of faces){
+    console.log(face);
+}
+
+// FOR IN
+const person = {
+    name: 'aga',
+    age:30
+}
+
+for (let feature in person) {
+    console.log(`${feature}: ${person[feature]}`)
+}
+
+// WHILE
+let a =10;
+
+while (a>0) {  
+    console.log(a--);
+} 
+
+// DO WHILE
+console.log('teraz b');
+let b =10;
+
+ do {  
+     b--;
+     console.log(b);
+} while (b>10);
+
+
+
+// 08.08 Przechowywanie danych
+
+// cookie - - archaiczne:
+// document.cookie = "testoweCiacho = wartość";
+// document.cookie = "testoweCiacho2 = wartość  2";
+// console.log(document.cookie);
+
+// localStorage.setItem('name', 'aga');
+console.log(localStorage.getItem('name'));
+
+const jsonPerson = JSON.stringify(person);
+console.log(jsonPerson);
+// localStorage.setItem('person', jsonPerson);
+const stringifyPerson = localStorage.getItem('person');
+const objectPerson = JSON.parse(stringifyPerson);
+console.log(objectPerson);
+localStorage.removeItem('person');
