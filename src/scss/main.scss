@@ -1,7 +1,6 @@
 @import "_normalize";
 @import "_variables";
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=latin-ext');
-
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=latin-ext");
 
 html {
   box-sizing: border-box;
@@ -42,8 +41,8 @@ body {
   }
 
   @media (min-width: $desktop) {
-      max-width: 850px;
-    }
+    max-width: 850px;
+  }
 }
 
 .footer {
@@ -121,18 +120,10 @@ body {
 }
 
 .article-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 10px;
-  grid-template-areas:
-    "article-list__header article-list__header"
-    ". ."
-    ". ."
-    "last-article last-article";
+  display: block; 
 
   &__header {
     color: $darkblue;
-    grid-area: article-list__header;
   }
 
   &__icon {
@@ -142,10 +133,10 @@ body {
     margin: 0 5px 5px 0;
     float: left;
 
-    transition: transform .3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
     &:hover {
       transform: scale(1.03);
-    }    
+    }
   }
 
   &__link {
@@ -165,11 +156,7 @@ body {
     background: rgb(237, 242, 245);
     border-radius: 10px;
     overflow: hidden;
-    margin: 5px 0;
-
-    &--last {
-      grid-area: last-article;
-    }
+    margin: 5px 0; 
   }
 
   &__shortcat-header {
@@ -177,7 +164,70 @@ body {
     padding: 5px 0 0 10px;
   }
 
-  @media (max-width: $mobile) {    
+  @media (max-width: $mobile) {
+    display: block;  
+  }
+}
+
+@supports (display: grid) {
+  .article-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-template-areas:
+      "article-list__header article-list__header"
+      ". ."
+      ". ."
+      "last-article last-article";
+
+    &__header {
+      color: $darkblue;
+      grid-area: article-list__header;
+    }
+
+    &__icon {
+      width: 100%;
+      max-width: 200px;
+      display: block;
+      margin: 0 5px 5px 0;
+      float: left;
+
+      transition: transform 0.3s ease-in-out;
+      &:hover {
+        transform: scale(1.03);
+      }
+    }
+
+    &__link {
+      color: $thirdnavy;
+    }
+
+    &__paragraph {
+      padding: 0 5px 0 25px;
+
+      &--color {
+        color: $darkblue;
+      }
+    }
+
+    &__shortcat {
+      border-bottom: 1.5px solid $lightblue;
+      background: rgb(237, 242, 245);
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 5px 0;
+
+      &--last {
+        grid-area: last-article;
+      }
+    }
+
+    &__shortcat-header {
+      color: $lightblue;
+      padding: 5px 0 0 10px;
+    }
+
+    @media (max-width: $mobile) {
       display: grid;
       grid-template-columns: 1fr;
       grid-template-areas:
@@ -188,9 +238,8 @@ body {
         "."
         "last-article";
     }
-  
+  }
 }
-
 
 .navigation {
   width: 100%;
@@ -205,16 +254,16 @@ body {
     text-align: center;
     flex-grow: 1;
 
-    transition: transform .2s linear, background .2s ease-in-out;
+    transition: transform 0.2s linear, background 0.2s ease-in-out;
     &:hover {
       transform: scale(1.2);
       background: $coldwhite;
       background: linear-gradient(180deg, rgb(144, 205, 255) 0%, rgb(237, 242, 245) 100%);
     }
 
-    @media (max-width: $mobile) {     
-        margin: 1px;
-      }
+    @media (max-width: $mobile) {
+      margin: 1px;
+    }
   }
 
   &__link {
@@ -233,37 +282,37 @@ body {
     justify-content: space-around;
     align-content: center;
 
-    @media (max-width: $mobile) {          
-        flex-direction: column;
-        align-content: flex-start;
-        display: none;
-      }
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      align-content: flex-start;
+      display: none;
+    }
 
-      &--visible {
-        @media (max-width: $mobile) {
+    &--visible {
+      @media (max-width: $mobile) {
         display: flex;
-        }
       }
+    }
   }
   &__switcher {
-    @media (max-width: $mobile) {   
+    @media (max-width: $mobile) {
       border: none;
       background: none;
       position: absolute;
       right: 16px;
       top: 16px;
     }
-    @media (min-width: $tablet) {      
-        display: none;
+    @media (min-width: $tablet) {
+      display: none;
     }
-    @media (min-width: $desktop) {         
-        display: none;
-      }
+    @media (min-width: $desktop) {
+      display: none;
+    }
   }
 
-  @media (min-width: $desktop) {   
-      max-width: 850px;
-  }  
+  @media (min-width: $desktop) {
+    max-width: 850px;
+  }
 }
 
 .site-header {
@@ -274,7 +323,6 @@ body {
   background: $coldwhite;
   width: 100%;
 }
-
 
 /* MEDIA ZOSTAŁY PRZEROBIONE NA SCSS
 @media (max-width: $mobile) {
